@@ -518,9 +518,8 @@ function extractEmails(str) {
  */
 function encodeToRot13(str) {
   const arrFromString = str.split('');
-  const decArray = arrFromString.map((el) => {
+  const encodedArray = arrFromString.map((el) => {
     const elCode = el.charCodeAt(el);
-    console.log(elCode);
     if ((elCode < 78 && elCode >= 65) || (elCode < 110 && elCode >= 97)) {
       return String.fromCharCode(elCode + 13);
     }
@@ -529,7 +528,7 @@ function encodeToRot13(str) {
     }
     return String.fromCharCode(elCode);
   });
-  return decArray.join('');
+  return encodedArray.join('');
 }
 
 /**
